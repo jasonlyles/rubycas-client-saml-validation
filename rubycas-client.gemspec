@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{rubycas-client}
-  s.version = "2.3.1"
+  s.version = "2.3.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Matt Zukowski", "Matt Walker", "Matt Campbell"]
-  s.date = %q{2011-10-23}
+  s.authors = [%q{Matt Zukowski}, %q{Matt Walker}, %q{Matt Campbell}]
+  s.date = %q{2011-11-19}
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -64,10 +64,10 @@ Gem::Specification.new do |s|
     "test/units/casclient/frameworks/rails/filter_test.rb"
   ]
   s.homepage = %q{http://github.com/rubycas/rubycas-client}
-  s.licenses = ["MIT"]
-  s.rdoc_options = ["--main", "README.rdoc"]
-  s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.7.2}
+  s.licenses = [%q{MIT}]
+  s.rdoc_options = [%q{--main}, %q{README.rdoc}]
+  s.require_paths = [%q{lib}]
+  s.rubygems_version = %q{1.8.9}
   s.summary = %q{Client library for the Central Authentication Service (CAS) protocol.}
 
   if s.respond_to? :specification_version then
@@ -75,6 +75,8 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<activesupport>, [">= 0"])
+      s.add_runtime_dependency(%q<uuidtools>, [">= 0"])
+      s.add_runtime_dependency(%q<savon>, [">= 0"])
       s.add_development_dependency(%q<riot>, [">= 0"])
       s.add_development_dependency(%q<rr>, [">= 0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -83,6 +85,8 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<actionpack>, [">= 0"])
     else
       s.add_dependency(%q<activesupport>, [">= 0"])
+      s.add_dependency(%q<uuidtools>, [">= 0"])
+      s.add_dependency(%q<savon>, [">= 0"])
       s.add_dependency(%q<riot>, [">= 0"])
       s.add_dependency(%q<rr>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -92,6 +96,8 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<activesupport>, [">= 0"])
+    s.add_dependency(%q<uuidtools>, [">= 0"])
+    s.add_dependency(%q<savon>, [">= 0"])
     s.add_dependency(%q<riot>, [">= 0"])
     s.add_dependency(%q<rr>, [">= 0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])

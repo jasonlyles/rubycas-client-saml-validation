@@ -39,8 +39,8 @@ module CASClient
         unless value[:@attribute_name] == "LoginAccountResp" || value[:@attribute_name] == "GetAccountResp" || value[:@attribute_name] == "Password"
           middle_of_cas += "<cas:#{value[:@attribute_name]}>#{value[:attribute_value]}</cas:#{value[:@attribute_name]}>"
         end
-        #EmailAddr is the same as the user, but I'm not specifically returned a cas:user value, so I'm forcing the issue
-        middle_of_cas += "<cas:user>#{value[:attribute_value]}</cas:user>" if value[:@attribute_name] == "EmailAddr"
+        #samlValidate is not specifically returning a cas:user value, so I'm forcing the issue
+        middle_of_cas += "<cas:user>#{value[:attribute_value]}</cas:user>" if value[:@attribute_name] == "AccountGuid"
       end
       full_cas_response = "#{beginning_of_cas}#{middle_of_cas}#{end_of_cas}".encode("UTF-8")
       full_cas_response
